@@ -1,3 +1,4 @@
+#include "config.h"
 #include "RCOutlet.h"
 
 RCOutlet rco(13);
