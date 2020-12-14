@@ -1,10 +1,25 @@
 #include <Arduino.h>
 
+/**
+ * Encapsulates communication protocol for a 433-MHz controlled
+ * power outlet
+ */
 class RCOutlet {
   public:
+    /**
+     * Constructs a new RCOutlet instance.
+     * 
+     * @param tx_pin The pin number of the output pin where a 433 MHz transmit
+     *               module is attached.
+     */
     RCOutlet(int tx_pin);
     virtual ~RCOutlet();
 
+    /**
+     * Set the state of power outlet A.
+     * 
+     * @param state true turns the outlet on, false turns it off.
+     */
     void switchA(bool state);
   protected:
     void send_one();
