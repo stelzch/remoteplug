@@ -34,6 +34,7 @@ void setup() {
     new BearSSL::X509List(SERVER_CERT),
     new BearSSL::PrivateKey(SERVER_KEY)
   );
+  server.enableCORS(true);
 
   server.on("/", []() {
     server.send(200, "text/plain", "Hello World!");
